@@ -10,7 +10,7 @@ Practice questions for Javascript Interview:
 
 | Serial No  | Topic Name |
 | ------------- | ------------- |
-| 1  |[THROTTLING](#t)|
+| 1  |[THROTTLING](#d)|
 | 2  |[MEMOIZATION](#se)|
 | 3  |[SPREAD VS REST](#fccc)|
 | 4  |[ASYNC, AWAIT, PROMISES, CALLBACK](#sm)|
@@ -31,13 +31,13 @@ Practice questions for Javascript Interview:
 ## TOPICS:
 ---
 
-<a name="t"></a><h2>THROTLLING</h2>
+<a name="d"></a><h2>DEBOUNCING</h2>
 ---
 
 <br>
-Higher Order Component in React is defined a component which takes another component as input and may or may not return another component.
+Limits the exceution of a function call , and waits for a certain amount of time before calling it again.
   
-<b>For example :</b> Suppose you have two buttons to design – Login & Register – So you can design a button component – then pass it to another higher order component which will have additional functionalities like – styling – on Click – then the text
+<b>For example :</b> Search Box - in application - here the number of calls to the api are limited by applying a delay so we can reduce the overhead on the server, and limit the number of api calls  to the server. 
 
 ### Code :
 
@@ -68,3 +68,4 @@ export default function ContainerHoc(component) {
 ### YOUTUBE PLAYLIST:
 * [Technical Suneja](https://www.youtube.com/watch?v=sOZwwL_-cBA&list=PL_HlKez9XCSM0bs8P7LtCTGh4rghAD2im)
 * [JS CAFE](https://www.youtube.com/@js_cafe/playlists)
+* [ROADSIDE CODER](https://www.youtube.com/watch?v=kCfTEoeQvQw&list=PLKhlp2qtUcSaCVJEt4ogEFs6I41pNnMU5&index=10)
