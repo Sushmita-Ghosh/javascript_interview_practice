@@ -23,7 +23,7 @@ Practice questions for Javascript Interview:
 | 11  |[HOISTING](#fccc)|
 | 12  |[EVENT BUBBLING, CAPTURING, PROPAGATION](#fccc)|
 | 13  |[CURRYING, INFINITE CURRYING](#fccc)|
-| 14  |[DEBOUNCING](#fccc)|
+| 14  |[THROTTLING](#t)|
 
 
 
@@ -94,37 +94,59 @@ function App() {
 export default App;
 
 ```
+``` Debouncing Polyfill ```
+```jsx
+const myDebounce = (cb, wait) => {
+    let timer;
+
+    return function (...args) {
+      if (timer) clearTimeout(timer);
+      timer = setTimeout(() => {
+        cb(...args);
+      }, wait);
+    };
+  };
+
+  const debouncedCount = myDebounce(() => {
+    setTriggerCount(triggerCount + 1);
+  }, 800);
+```
+
+
 [Blog](https://www.upbeatcode.com/react/how-to-use-lodash-in-react/#:~:text=Lodash%20provides%20functional%20programming%20helpers,cluttering%20up%20the%20global%20namespace.)
+[YT](https://www.youtube.com/watch?v=kCfTEoeQvQw&list=PLKhlp2qtUcSaCVJEt4ogEFs6I41pNnMU5&index=10&t=204s)
 
 
 ---
 
 
-<a name="T"></a><h2>THROTLLING</h2>
+<a name="t"></a><h2>THROTLLING</h2>
 ---
 
 <br>
-Throlling is a mechanism to limit the execution of a even handler function.
+Throlling is a mechanism to limit the execution of a even handler function when events are triggered continuously due to user action- like click of a button
   
 <b>For example :</b> Say on scroll we are triggering an event which calls an Api( so it is an expensive function) - we can limit the calls of the event by using throllling function.
 
 ### Code :
 
 
-```ContainerHoc.jsx```
-```javascript
-export default function ContainerHoc(component) {
-  const Component = component;
-  return function (props) {
-    return (
-      <div>
-        <h1> Inside HOC</h1>
-        {/* yahan props pass krna mandatory hai */}
-        <Component {...props} />
-      </div>
-    );
+```Throttling Pollyfill```
+```jsx
+const myThrottle = (cb, delay) => {
+    let last = 0;
+
+    return (...args) => {
+      let now = new Date().getTime(); // we get current time
+      if (now - last < delay) return; // if the current time - last time we triggeres < delay we return
+      last = now; // if it is greater set the last to current time , triggered time
+      return cb(...args); // execute the callback we return
+    };
   };
-}
+
+  const throttledCount = myThrottle(() => {
+    setTriggerCount(triggerCount + 1);
+  }, 1000);
 ```
 
  [YT](https://www.youtube.com/watch?v=o22KRrxab18&list=PLmcRO0ZwQv4QMslGJQg7N8AzaHkC5pJ4t&index=28) 
