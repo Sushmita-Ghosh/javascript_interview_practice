@@ -10,7 +10,7 @@ Practice questions for Javascript Interview:
 
 | Serial No  | Topic Name |
 | ------------- | ------------- |
-| 1  |[THROTTLING](#d)|
+| 1  |[DEBOUNCING](#d)|
 | 2  |[MEMOIZATION](#se)|
 | 3  |[SPREAD VS REST](#fccc)|
 | 4  |[ASYNC, AWAIT, PROMISES, CALLBACK](#sm)|
@@ -36,6 +36,73 @@ Practice questions for Javascript Interview:
 
 <br>
 Limits the exceution of a function call , and waits for a certain amount of time before calling it again.
+  
+<b>For example :</b> Search Box - in application - here the number of calls to the api are limited by applying a delay so we can reduce the overhead on the server, and limit the number of api calls  to the server. 
+
+### Code :
+```
+For below code to work use npm install lodash
+```
+
+```Debouncing.jsx```
+```jsx
+import { useState } from "react";
+import debounce from "lodash/debounce";
+
+function Debouncing() {
+  const [pressedCount, setPressedCount] = useState(0);
+  const [triggerCount, setTriggerCount] = useState(0);
+
+  const onButtonClick = () => {
+    setPressedCount(pressedCount + 1);
+    debouncedCount();
+  };
+
+  const debouncedCount = debounce(() => {
+    setTriggerCount(triggerCount + 1);
+  }, 800);
+  return (
+    <>
+      <button onClick={onButtonClick}>Increment</button>
+      <p>
+        Button Pressed <span>{pressedCount}</span> times
+      </p>
+      <p>
+        Triggered <span>{triggerCount}</span> times
+      </p>
+    </>
+  );
+}
+
+export default Debouncing;
+
+```
+```
+App.jsx
+```
+```jsx
+import "./App.css";
+import Debouncing from "./components/Debouncing";
+
+function App() {
+
+  return (
+    <>
+      <Debouncing />
+    </>
+  );
+}
+
+export default App;
+
+```
+
+
+<a name="T"></a><h2>THROTLLING</h2>
+---
+
+<br>
+Throlling is a mechanism to limit the execution of a even handler function.
   
 <b>For example :</b> Search Box - in application - here the number of calls to the api are limited by applying a delay so we can reduce the overhead on the server, and limit the number of api calls  to the server. 
 
