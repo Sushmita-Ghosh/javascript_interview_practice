@@ -149,7 +149,28 @@ const myThrottle = (cb, delay) => {
   }, 1000);
 ```
 
- [YT](https://www.youtube.com/watch?v=o22KRrxab18&list=PLmcRO0ZwQv4QMslGJQg7N8AzaHkC5pJ4t&index=28) 
+ [YT](https://www.youtube.com/watch?v=kCfTEoeQvQw&list=PLKhlp2qtUcSaCVJEt4ogEFs6I41pNnMU5&index=10) 
+
+---
+<a name="c"></a><h2>CLOSURES</h2>
+---
+
+<br>
+
+```Lexical Scope```
+Lexical scope means a variable defined outside a function can be accessible within a function but opposite is not true, variables declared inside function caanot be accessed outside
+  
+<b>For example :</b> 
+
+### Code :
+
+
+``````
+```jsx
+
+```
+
+ [YT](https://www.youtube.com/watch?v=kCfTEoeQvQw&list=PLKhlp2qtUcSaCVJEt4ogEFs6I41pNnMU5&index=10) 
 
 ---
 
