@@ -94,6 +94,10 @@ function App() {
 export default App;
 
 ```
+[Blog](https://www.upbeatcode.com/react/how-to-use-lodash-in-react/#:~:text=Lodash%20provides%20functional%20programming%20helpers,cluttering%20up%20the%20global%20namespace.)
+
+
+---
 
 
 <a name="T"></a><h2>THROTLLING</h2>
@@ -102,7 +106,7 @@ export default App;
 <br>
 Throlling is a mechanism to limit the execution of a even handler function.
   
-<b>For example :</b> Search Box - in application - here the number of calls to the api are limited by applying a delay so we can reduce the overhead on the server, and limit the number of api calls  to the server. 
+<b>For example :</b> Say on scroll we are triggering an event which calls an Api( so it is an expensive function) - we can limit the calls of the event by using throllling function.
 
 ### Code :
 
