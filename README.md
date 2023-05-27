@@ -77,9 +77,7 @@ function Debouncing() {
 export default Debouncing;
 
 ```
-```
-App.jsx
-```
+```App.jsx```
 ```jsx
 import "./App.css";
 import Debouncing from "./components/Debouncing";
