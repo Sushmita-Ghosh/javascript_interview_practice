@@ -157,7 +157,7 @@ const myThrottle = (cb, delay) => {
 
 <br>
 
-```Lexical Scope```
+#### Lexical Scope
 <br/>
 Lexical scope means a variable defined outside a function can be accessible within a function but opposite is not true, variables declared inside function caanot be accessed outside
 
