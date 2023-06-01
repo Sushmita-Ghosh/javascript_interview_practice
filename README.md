@@ -180,3 +180,4 @@ Lexical scope means a variable defined outside a function can be accessible with
 * [Technical Suneja](https://www.youtube.com/watch?v=sOZwwL_-cBA&list=PL_HlKez9XCSM0bs8P7LtCTGh4rghAD2im)
 * [JS CAFE](https://www.youtube.com/@js_cafe/playlists)
 * [ROADSIDE CODER](https://www.youtube.com/watch?v=kCfTEoeQvQw&list=PLKhlp2qtUcSaCVJEt4ogEFs6I41pNnMU5&index=10)
+* [FREECODECAMP](https://www.youtube.com/watch?v=XBTJDpT2XaI&t=190s)
