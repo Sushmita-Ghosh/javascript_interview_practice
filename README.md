@@ -25,6 +25,7 @@ Practice questions for Javascript Interview:
 | 13  |[CURRYING, INFINITE CURRYING](#fccc)|
 | 14  |[THROTTLING](#t)|✔
 | 15  |[THIS KEYWORD](#this)|✔
+| 16  |[PROMISES](#p)|✔
 
 
 
@@ -187,7 +188,7 @@ function makeFunc() {
 makeFunc()()
 
 ```
-*In the above example we are able to access the name which is defined in outer scope even after the function display name has been returned.
+*In the above example we are able to access the name which is defined in outer scope even after the function display name has been returned.*
 
 ### USE:
 
@@ -247,8 +248,9 @@ console.timeEnd("12");
 ```
 ![image](https://github.com/Sushmita-Ghosh/javascript_interview_practice/assets/82622059/854f6981-2a4e-4e3d-ab9c-849f0698843b)
 
-*The above function is time consuming- We can use closures to optimize the time taken by them - The issue is that the looping is happening every time we are calling the function- as there is new reference to the a variable created everytime.
+*The above function is time consuming- We can use closures to optimize the time taken by them - The issue is that the looping is happening every time we are calling the function- as there is new reference to the a variable created everytime.*
 
+```javascript
 function find() {
   let a = [];
   for (let i = 0; i < 100000000; i++) {
@@ -267,23 +269,43 @@ console.timeEnd("6");
 console.time("50");
 closure(50);
 console.timeEnd("50");
+```
 
 *We are not doing the heaving operation - hence the time reduced is very very high as can be seen below - it is now in* ***ms*** 
 
 ![image](https://github.com/Sushmita-Ghosh/javascript_interview_practice/assets/82622059/9c4e48a7-df7c-4fe3-bd65-36ce24f6e823)
 
 
+### HOW CAN WE SOLVE THE FAMOUS SETTIMEOUT QUES USING VAR?
+
+```javascript
+for (var i = 0; i < 3; i++) {
+  function inner(i) {
+    setTimeout(() => {
+      console.log(i);
+    }, i * 1000);
+  }
+  inner(i);
+}
+
+```
+
+*The above code will create a new refernce to i each time the function inner is called.
+
+### PRIVATE COUNTER USING CLOSURE
+
 
  [YT](https://www.youtube.com/watch?v=kCfTEoeQvQw&list=PLKhlp2qtUcSaCVJEt4ogEFs6I41pNnMU5&index=10) 
 
 ---
+
 
 <a name="this"></a><h2>THIS KEYWORD</h2>
 ---
 
 <br>
 
-### Lexical Scope
+### 
 
 
 <b>For example :</b> 
@@ -302,7 +324,7 @@ console.timeEnd("50");
 
 <br>
 
-### Lexical Scope
+### 
 
 
 <b>For example :</b> 
@@ -316,6 +338,27 @@ console.timeEnd("50");
  [YT]() 
 
 ---
+
+<a name="p"></a><h2>PROMISES</h2>
+---
+
+<br>
+
+### 
+
+
+<b>For example :</b> 
+
+### Code :
+
+```jsx
+
+```
+
+ [YT]() 
+
+---
+
 
 
 
