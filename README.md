@@ -14,7 +14,7 @@ Practice questions for Javascript Interview:
 | 2  |[MEMOIZATION](#se)|
 | 3  |[SPREAD VS REST](#fccc)|
 | 4  |[ASYNC, AWAIT, PROMISES, CALLBACK](#sm)|
-| 5  |[CLOSURES](#)|✔
+| 5  |[CLOSURES](#c)|✔
 | 6  |[CALL, APPLY, BIND](#cab)|✔
 | 7  |[MAP, FILTER, REDUCE](#fccc)|
 | 8  |[UNDEFINED, NOT DEFINED](#fccc)|
@@ -268,7 +268,7 @@ console.time("50");
 closure(50);
 console.timeEnd("50");
 
-*We are not doing the heaving operation - hence the time reduced is very very high as can be seen below - it is now in ***ms*** 
+*We are not doing the heaving operation - hence the time reduced is very very high as can be seen below - it is now in* ***ms*** 
 
 ![image](https://github.com/Sushmita-Ghosh/javascript_interview_practice/assets/82622059/9c4e48a7-df7c-4fe3-bd65-36ce24f6e823)
 
