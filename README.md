@@ -10,12 +10,12 @@ Practice questions for Javascript Interview:
 
 | Serial No  | Topic Name |
 | ------------- | ------------- |
-| 1  |[DEBOUNCING](#d)|
+| 1  |[DEBOUNCING](#d)|✔
 | 2  |[MEMOIZATION](#se)|
 | 3  |[SPREAD VS REST](#fccc)|
 | 4  |[ASYNC, AWAIT, PROMISES, CALLBACK](#sm)|
-| 5  |[CLOSURES](#)|
-| 6  |[CALL, APPLY, BIND](#fccc)|
+| 5  |[CLOSURES](#)|✔
+| 6  |[CALL, APPLY, BIND](#cab)|✔
 | 7  |[MAP, FILTER, REDUCE](#fccc)|
 | 8  |[UNDEFINED, NOT DEFINED](#fccc)|
 | 9  |[PROTOTYPES](#fccc)|
@@ -23,8 +23,8 @@ Practice questions for Javascript Interview:
 | 11  |[HOISTING](#fccc)|
 | 12  |[EVENT BUBBLING, CAPTURING, PROPAGATION](#fccc)|
 | 13  |[CURRYING, INFINITE CURRYING](#fccc)|
-| 14  |[THROTTLING](#t)|
-
+| 14  |[THROTTLING](#t)|✔
+| 15  |[THIS KEYWORD](#this)|✔
 
 
 
@@ -161,6 +161,83 @@ const myThrottle = (cb, delay) => {
 
 Lexical scope means a variable defined outside a function can be accessible within a function but opposite is not true, variables declared inside function caanot be accessed outside
 
+
+### CLOSURE
+
+* A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). 
+* In other words, a closure gives you access to an outer function's scope from an inner function.
+*  In JavaScript, closures are created every time a function is created, at function creation time.
+
+<b>For example :</b> 
+
+### Code :
+
+```javascript
+function makeFunc() {
+  const name = "Sushmita";
+  function displayName() {
+    console.log(name);
+  }
+  return displayName;
+}
+
+//const myFunc = makeFunc();
+//myFunc();
+
+makeFunc()()
+
+```
+*In the above example we are able to access the name which is defined in outer scope even after the function display name has been returned.
+
+### USE:
+
+* Closures make it possible for JS to have private variables.
+
+### What will be the output?
+
+```javascript
+let count= 0
+(function printCount(){
+    if(count===0){
+        let count=1 // shadowing
+        console.log(count); // 1
+    }
+    console.log(count); // 0
+})()
+```
+
+***Output***
+1
+0
+
+### Write a funtion that will allow you to do the below:
+
+```javascript
+var addSix = createBase(6);
+addSix(10); // 16
+addSix(21); //27
+```
+
+```javascript
+function createBase(x) {
+  return function (y) {
+    console.log(x + y);
+  };
+}
+```
+
+ [YT](https://www.youtube.com/watch?v=kCfTEoeQvQw&list=PLKhlp2qtUcSaCVJEt4ogEFs6I41pNnMU5&index=10) 
+
+---
+
+<a name="this"></a><h2>THIS KEYWORD</h2>
+---
+
+<br>
+
+### Lexical Scope
+
+
 <b>For example :</b> 
 
 ### Code :
@@ -169,10 +246,28 @@ Lexical scope means a variable defined outside a function can be accessible with
 
 ```
 
- [YT](https://www.youtube.com/watch?v=kCfTEoeQvQw&list=PLKhlp2qtUcSaCVJEt4ogEFs6I41pNnMU5&index=10) 
+ [YT]() 
 
 ---
+<a name="cab"></a><h2>CALL, APPLY, BIND</h2>
+---
 
+<br>
+
+### Lexical Scope
+
+
+<b>For example :</b> 
+
+### Code :
+
+```jsx
+
+```
+
+ [YT]() 
+
+---
 
 
 
