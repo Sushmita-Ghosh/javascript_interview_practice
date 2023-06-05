@@ -245,14 +245,34 @@ find(6);
 console.timeEnd("12");
 
 ```
-```nodejs
-$ node script.js
-36
-6: 1.074s
-36
-12: 1.240s
-```
-*The above function is time consuming- We can use closures to optimize the time taken by them
+![image](https://github.com/Sushmita-Ghosh/javascript_interview_practice/assets/82622059/854f6981-2a4e-4e3d-ab9c-849f0698843b)
+
+*The above function is time consuming- We can use closures to optimize the time taken by them - The issue is that the looping is happening every time we are calling the function- as there is new reference to the a variable created everytime.
+
+function find() {
+  let a = [];
+  for (let i = 0; i < 100000000; i++) {
+    a[i] = i * i;
+  }
+
+  return function (index) {
+    console.log(a[index]);
+  };
+}
+
+const closure = find();
+console.time("6");
+closure(6);
+console.timeEnd("6");
+console.time("50");
+closure(50);
+console.timeEnd("50");
+
+*We are not doing the heaving operation - hence the time reduced is very very high as can be seen below - it is now in ***ms*** 
+
+![image](https://github.com/Sushmita-Ghosh/javascript_interview_practice/assets/82622059/9c4e48a7-df7c-4fe3-bd65-36ce24f6e823)
+
+
 
  [YT](https://www.youtube.com/watch?v=kCfTEoeQvQw&list=PLKhlp2qtUcSaCVJEt4ogEFs6I41pNnMU5&index=10) 
 
