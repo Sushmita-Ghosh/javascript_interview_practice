@@ -226,6 +226,34 @@ function createBase(x) {
 }
 ```
 
+### TIME OPTIMIZATION
+```javascript
+function find(index) {
+  let a = [];
+  for (let i = 0; i < 1000000; i++) {
+    a[i] = i * i;
+  }
+
+  console.log(a[index]);
+}
+
+console.time("6");
+find(6);
+console.timeEnd("6");
+console.time("12");
+find(6);
+console.timeEnd("12");
+
+```
+```nodejs
+$ node script.js
+36
+6: 1.074s
+36
+12: 1.240s
+```
+*The above function is time consuming- We can use closures to optimize the time taken by them
+
  [YT](https://www.youtube.com/watch?v=kCfTEoeQvQw&list=PLKhlp2qtUcSaCVJEt4ogEFs6I41pNnMU5&index=10) 
 
 ---
