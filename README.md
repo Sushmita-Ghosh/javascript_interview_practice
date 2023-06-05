@@ -294,6 +294,36 @@ for (var i = 0; i < 3; i++) {
 
 ### PRIVATE COUNTER USING CLOSURE
 
+```javascript
+function counter() {
+  var _counter = 0; // Here counter is a private variable
+
+  function add(increment) {
+    _counter += increment;
+  }
+
+  function retrieve() {
+    return "Counter = " + _counter;
+  }
+
+  return {
+    add,
+    retrieve,
+  };
+}
+
+const c = counter(); // created a private counter
+c.add(5);
+c.add(10);
+
+console.log(c.retrieve());
+```
+
+```python
+$ node script.js
+Counter = 15
+```
+
 
  [YT](https://www.youtube.com/watch?v=kCfTEoeQvQw&list=PLKhlp2qtUcSaCVJEt4ogEFs6I41pNnMU5&index=10) 
 
