@@ -319,11 +319,90 @@ c.add(10);
 console.log(c.retrieve());
 ```
 
-```python
+```javascript
 $ node script.js
 Counter = 15
 ```
 
+### MODULE PATTERN
+
+```javascript
+var Module = (function () {
+  function privateMethod() {
+    // do something which you do not want the user to access directly.
+    // suppose we have an API call which we do not want to access to the iser, we can keep it here
+  }
+  return {
+    publicMethod: function () {
+      // can call the private Method
+    },
+  };
+})();
+
+
+
+Module.publicMethod() // runs successfully
+Module.privateMethod() // give us an error
+```
+
+### MAKE THE BELOW FUNCTION RUN ONLY ONCE:
+
+```javascript
+let view;
+
+function likeTheVideo(){
+    view= "Sushmita Ghosh"
+    console.log("Subscribe to " + view);
+}
+
+likeTheVideo()
+```
+
+*We can use closures to do the same - we can create a local variable "called" which will keep an count of how many time the function has run.
+
+```javascript
+let view;
+
+function likeTheVideo() {
+  let called = 0;
+
+  return function () {
+    if (called > 0) {
+      console.log("Already Subcribed to Sushmita's Channel");
+    } else {
+      view = "Sushmita Ghosh";
+      console.log("Subscribe to " + view);
+      called++;
+    }
+  };
+}
+
+let isSubscribed = likeTheVideo();
+isSubscribed();
+isSubscribed();
+```
+
+```jsx
+$ node script.js
+Subscribe to Sushmita Ghosh
+Already Subcribed to Sushmita's Channel
+```
+
+*Everytime we call the isSubscribed function we are referencing the same called variable.
+
+### ONCE POLYFILL:
+
+* We can write a more generic function for the above function.
+
+
+### CACHING & MEMOIZATION:
+
+
+### DIFFERENCE BETWEEN CLOSURE & SCOPE:
+
+* Whenever we create a function within another function, then the inner function is the closure. This closure is usually returned so that it can use the outer function's variable at a later time. ( Global, outer & local scopes)
+
+* A scope in js defined what variable you have access to - Local & global ( 2 kinds)
 
  [YT](https://www.youtube.com/watch?v=kCfTEoeQvQw&list=PLKhlp2qtUcSaCVJEt4ogEFs6I41pNnMU5&index=10) 
 
@@ -335,18 +414,64 @@ Counter = 15
 
 <br>
 
-### 
+### THIS KEYWORD (IMPLICIT BINDING):
+
+* Depends on the context that we are refering to - based on which it's value changes.
+
+
+### THIS INSIDE FUNCTION:
+
+* For normal function this is taken - from the context to which it is referening to.
+* For arrow functions this refers to the outer normal function
 
 
 <b>For example :</b> 
 
 ### Code :
 
+*
 ```jsx
+let user = {
+  name: "Sews",
+  age: 24,
+  getDetails() {
+    console.log(this.name + " is " + this.age + " years old ");
+  },
+};
 
+user.getDetails();
+```
+```javascript
+$ node this.js
+Sews is 24 years old 
 ```
 
- [YT]() 
+*
+```javascript
+let user = {
+  name: "Sews",
+  age: 24,
+  childObj: {
+    newName: "Suzuna",
+    getDetails() {
+      console.log(this.newName + " Nd " + this.name);
+    },
+  },
+};
+
+user.childObj.getDetails();
+```
+
+* In the aboove funtion, this refers to "childObj response
+
+```javascript
+$ node this.js
+Suzuna is undefined years old 
+```
+
+* Replacing with Arrow Functions:
+
+ [YT](https://www.youtube.com/watch?v=rv7Q11KWmKU&list=PLKhlp2qtUcSaCVJEt4ogEFs6I41pNnMU5&index=7&ab_channel=RoadsideCoder) 
 
 ---
 <a name="cab"></a><h2>CALL, APPLY, BIND</h2>
