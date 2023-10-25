@@ -26,6 +26,7 @@ Practice questions for Javascript Interview:
 | 14  |[THROTTLING](#t)|✔
 | 15  |[THIS KEYWORD](#this)|✔
 | 16  |[PROMISES](#p)|✔
+| 17  |[ASYNC VS DEFER](#ad)|✔
 
 
 
@@ -514,6 +515,51 @@ Suzuna is undefined years old
 
 ---
 
+
+<a name="ad"></a><h2>ASYNC VS DEFER</h2>
+---
+
+<br>
+
+### How does script loading happen in our webpage?
+* A html file as soon as it gets the script tag it starts to download and execute the js file. This will interrupt the html parsing causing an initial delay in html rendering and eventually time to load.
+
+ 
+ ```Async``` tag will start to download the js file parallely to html rendering but it blocks rendering after it is downloaded so blocking time is just the time it requires for executing and not downloading.
+
+##### What happens when you add a async attribute?
+* Make par­al­lel requests to fetch the files.
+* Con­tinue pars­ing the doc­u­ment as if it was never interrupted.
+* Exe­cute the indi­vid­ual scripts the moment the files are downloaded.
+
+```Defer``` tag will parallely download the js file and will execute it once the html rendering is done. So no delay in html rendering.
+
+##### What happens when you add defer attribute?
+* Make par­al­lel requests to fetch the indi­vid­ual files.
+* Con­tinue pars­ing the doc­u­ment as if it was never interrupted.
+* Fin­ish pars­ing the doc­u­ment even if the script files have downloaded.
+* Exe­cute each script in the order they were encoun­tered in the document.
+
+
+#####  When to use defer and async attributes on the <script> tag?
+
+```Defer attribute```:It will guarantee all the scripts will execute after the HTML parsing.The defer attribute is useful when the script is used for DOM manipulations.
+
+```Async attribute```: It does not guarantee that all the scripts will execute after the HTML parsing. The async attribute is useful when the script is not used for DOM manipulation (google ads link)
+
+##### Which is the best place to place your script tag in script file ?
+
+###### Async tag in head tag ?
+Async tag will always be independent so adding to head also wont make it much efficient.
+
+###### Defer tag in head tag ?
+Conventionally all tags are kept in body but keeping the script tag in head with defer will help a lot as during rendering , the js file will be downloaded parallely and on completion of rendering js execution will start immidiately( we dont have to wait for js download again when rendering ends). This is kind of prefetching assets.
+
+![image](https://github.com/Sushmita-Ghosh/javascript_interview_practice/assets/82622059/b635a494-d510-4df4-b50b-a1e8fe9ab76d)
+
+ [SAGAR GIRI'S POST](https://www.linkedin.com/posts/sagargiri07_js-javascript-coding-activity-7121365637754494976-NyyI?utm_source=share&utm_medium=member_desktop) 
+
+---
 
 
 
