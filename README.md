@@ -480,10 +480,11 @@ Suzuna is undefined years old
 
 <br>
 
-### 
 
 
-<b>For example :</b> 
+
+
+
 
 ### Code :
 
@@ -500,10 +501,45 @@ Suzuna is undefined years old
 
 <br>
 
-### 
+### SYNCHRONOUS CODE VS ASYNCHRONOUS CODE
+- line by line
+- js is a single-threaded language - it can't execute two tasks (like setTimeout) in parallel - what it does is it first runs all of our synchronous code and then setTimeout code will be executed
+- setTimeout is part of API - so even if the time given to setTimeout is 0ms, the order remains the same.
+- The above concept is of the event loop
+
+### WHAT ARE CALLBACKS?
+- Since JS is single-threaded, for any task where we need to wait for some time (asynchronous task) we do need callbacks
+- callbacks are functions which can be executed at a later point of time.
 
 
-<b>For example :</b> 
+
+```javascript
+setTimeout(() => {
+    console.log("Hello World");
+}, 5000)
+```
+
+### WHAT IS CALLBACK HELL?
+
+- In a real-world application we might run into situations where we have a dependency of tasks on one another - say for example APIs trying to create order, payment, order summary, etc all these different APIs are dependent on one another but if we write the code - it gets ugly and difficult to understand. - which is called callback hell.
+
+- Callback nested within one another is callback hell, resulting in code growing horizontally.
+- This kind of structure is also known as the pyramid of doom.
+
+### WHAT IS INVERSION OF CONTROL?
+Inversion of control is losing control over our code when using callbacks.
+Two issues while using callbacks
+
+1 - Callback hell
+When a function is passed as an argument to another function, it becomes a callback function. This process continues and there are many callbacks inside another's Callback function.
+This grows the code horizontally instead of vertically. That mechanism is known as callback hell. 
+
+2 - Inversion of control
+The callback function is passed to another callback, this way we lose control of our code. We don't know what is happening behind the scenes and the program becomes challenging to maintain. 
+That process is called inversion of control. 
+
+
+### PROMISES: 
 
 ### Code :
 
@@ -511,7 +547,7 @@ Suzuna is undefined years old
 
 ```
 
- [YT]() 
+ [YT AKSHAY](https://www.youtube.com/watch?v=yEKtJGha3yM) 
 
 ---
 
