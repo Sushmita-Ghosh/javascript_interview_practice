@@ -540,14 +540,25 @@ That process is called inversion of control.
 
 
 ### PROMISES: 
+1. Before promise we used to depend on callback functions which would result in 1.) Callback Hell (Pyramid of doom) | 2.) Inversion of control
+2. Inversion of control is overcome by using promise.
+  2.1) **A promise is an object that represents the eventual completion/failure of an asynchronous operation.**
+  2.2) A promise has 3 states: pending | fulfilled | rejected.
+  2.3)  As soon as the promise is fulfilled/rejected => It updates the empty object which is assigned undefined in the pending state.
+  2.4) A promise resolves only once and it is immutable. 
+  2.5) Using .then() we can control when we call the cb(callback) function.
+  2.6) A promise object has two things - PromiseState(pending/fulfilled) & PromiseData(data)
+  2.7) fetch returns a promise
 
-### Code :
+4. To avoid callback hell (Pyramid of doom) => We use promise chaining. This way our code expands vertically instead of horizontally. Chaining is done using '.then()'
+5. A very common mistake that developers do is not returning a value during chaining of promises. Always remember to return a value. This returned value will be used by the next .then()
+![image](https://github.com/Sushmita-Ghosh/javascript_interview_practice/assets/82622059/9951dbb1-f995-4413-a44d-f700e4be0b84)
 
-```jsx
-
-```
+1) A Promise is an object that represents the eventual completion or failure of an asynchronous operations.
+2) Importance of promise is that we do not loose the control of the program, a promise object is immutable and can be send anywhere without worrying about changes, also it resolves only once either to success or failure.
 
  [YT AKSHAY](https://www.youtube.com/watch?v=yEKtJGha3yM) 
+ [AKSHAY PROMISES](https://www.youtube.com/watch?v=ap-6PPAuK1Y&list=PLlasXeu85E9eWOpw9jxHOQyGMRiBZ60aX&index=3&t=779s)     
 
 ---
 
@@ -604,3 +615,4 @@ Conventionally all tags are kept in body but keeping the script tag in head with
 * [JS CAFE](https://www.youtube.com/@js_cafe/playlists)
 * [ROADSIDE CODER](https://www.youtube.com/watch?v=kCfTEoeQvQw&list=PLKhlp2qtUcSaCVJEt4ogEFs6I41pNnMU5&index=10)
 * [FREECODECAMP](https://www.youtube.com/watch?v=XBTJDpT2XaI&t=190s)
+* [AKSHAY SAINI](
