@@ -645,18 +645,16 @@ console.log("hello world");
 
 ```
 
-```
-Output
-```
+```OUTPUT```
 
 ``` jsx
 hello world
 4950
 ```
 
-```
-readFile
-```
+```readFile```
+
+
 
 ```javascript
 const fs = require('fs');
@@ -669,9 +667,7 @@ fs.readFile("a.txt", "utf-8", (err, data) => {
 console.log("Will this be printed first?");
 ```
 
-```
-Output
-```
+```OUTPUT```
 
 ``` jsx
 Will this be printed first?
