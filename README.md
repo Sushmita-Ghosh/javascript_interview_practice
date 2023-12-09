@@ -27,6 +27,7 @@ Practice questions for Javascript Interview:
 | 15  |[THIS KEYWORD](#this)|✔
 | 16  |[PROMISES](#p)|✔
 | 17  |[ASYNC VS DEFER](#ad)|✔
+| 18  |[HOW DO WE ACHIEVE ASYCNHRONOUS ACTIVITY IN JS? EVENT LOOP](#el)|✔
 
 
 
@@ -594,13 +595,13 @@ That process is called inversion of control.
 
 ```Async attribute```: It does not guarantee that all the scripts will execute after the HTML parsing. The async attribute is useful when the script is not used for DOM manipulation (google ads link)
 
-##### Which is the best place to place your script tag in script file ?
+##### Which is the best place to place your script tag in the script file?
 
-###### Async tag in head tag ?
-Async tag will always be independent so adding to head also wont make it much efficient.
+###### Async tag in the head tag?
+The Async tag will always be independent so adding to the head also won't make it much more efficient.
 
 ###### Defer tag in head tag ?
-Conventionally all tags are kept in body but keeping the script tag in head with defer will help a lot as during rendering , the js file will be downloaded parallely and on completion of rendering js execution will start immidiately( we dont have to wait for js download again when rendering ends). This is kind of prefetching assets.
+Conventionally all tags are kept in body but keeping the script tag in head with defer will help a lot as during rendering, the js file will be downloaded parallelly and on completion of rendering js execution will start immediately ( we dont have to wait for js download again when rendering ends). This is  kind of prefetching assets.
 
 ![image](https://github.com/Sushmita-Ghosh/javascript_interview_practice/assets/82622059/b635a494-d510-4df4-b50b-a1e8fe9ab76d)
 
@@ -608,6 +609,45 @@ Conventionally all tags are kept in body but keeping the script tag in head with
 
 ---
 
+---
+<a name="el"></a><h2>HOW DO WE ACHIEVE ASYCNHRONOUS ACTIVITY IN JS? EVENT LOOP</h2>
+---
+
+<br>
+
+### SINCE JS IS SINGLE-THREADED, HOW DO WE ACHIEVE ACHIEVE ASYCNHRONOUS ACTIVITY IN JS?
+Even though JS is single-threaded ( just like the human brain). JS can do things parallelly by delegating the tasks & also context switch between tasks if need be( the net time to do both things would still be the same).
+* JS does this by using async functions.
+
+
+### WHAT IS ASYNCHRONOUS FUNCTION?
+- They are functions that can be executed parallelly with other sets of tasks probably after a certain amount of time. - eg setTimeout, fs.readFile( reads file from your system), fetch ( to fetch data from API endpoint)
+
+
+
+### Code :
+
+```jsx
+function findSum(n) {
+  let sum = 0;
+  for (let i = 0; i < n; i++) {
+    sum += i;
+  }
+  return sum;
+}
+
+function findSumTill100(n) {
+  let sumTill100 = findSum(100);
+  console.log(sumTill100)
+}
+
+setTimeout(findSumTill100, 1000);
+console.log("hello world");
+
+```
+
+
+---
 
 
 ### YOUTUBE PLAYLIST:
@@ -615,4 +655,5 @@ Conventionally all tags are kept in body but keeping the script tag in head with
 * [JS CAFE](https://www.youtube.com/@js_cafe/playlists)
 * [ROADSIDE CODER](https://www.youtube.com/watch?v=kCfTEoeQvQw&list=PLKhlp2qtUcSaCVJEt4ogEFs6I41pNnMU5&index=10)
 * [FREECODECAMP](https://www.youtube.com/watch?v=XBTJDpT2XaI&t=190s)
-* [AKSHAY SAINI](
+* [AKSHAY SAINI](https://namastedev.com/learn/namaste-javascript)
+  
