@@ -13,7 +13,7 @@ Practice questions for Javascript Interview:
 | 1  |[DEBOUNCING](#d)|✔
 | 2  |[MEMOIZATION](#se)|
 | 3  |[SPREAD VS REST](#fccc)|
-| 4  |[ASYNC, AWAIT, PROMISES, CALLBACK](#sm)|
+| 4  |[](#sm)|
 | 5  |[CLOSURES](#c)|✔
 | 6  |[CALL, APPLY, BIND](#cab)|✔
 | 7  |[MAP, FILTER, REDUCE](#fccc)|
@@ -28,6 +28,7 @@ Practice questions for Javascript Interview:
 | 16  |[PROMISES](#p)|✔
 | 17  |[ASYNC VS DEFER](#ad)|✔
 | 18  |[HOW DO WE ACHIEVE ASYCNHRONOUS ACTIVITY IN JS? EVENT LOOP](#el)|✔
+| 19  |[ASYNC AWAIT](#aa)|✔
 
 
 
@@ -543,7 +544,8 @@ That process is called inversion of control.
 ### PROMISES: 
 1. Before promise we used to depend on callback functions which would result in 1.) Callback Hell (Pyramid of doom) | 2.) Inversion of control
 2. Inversion of control is overcome by using promise.
-  2.1) **A promise is an object that represents the eventual completion/failure of an asynchronous operation.**
+  2.1.1) **A promise is an object that represents the eventual completion/failure of an asynchronous operation.**
+  2.1.2) They are just syntactical sugar to the ugly code that callbacks bring into the picture. But under the hood all the working remains same.
   2.2) A promise has 3 states: pending | fulfilled | rejected.
   2.3)  As soon as the promise is fulfilled/rejected => It updates the empty object which is assigned undefined in the pending state.
   2.4) A promise resolves only once and it is immutable. 
@@ -557,6 +559,38 @@ That process is called inversion of control.
 
 1) A Promise is an object that represents the eventual completion or failure of an asynchronous operations.
 2) Importance of promise is that we do not loose the control of the program, a promise object is immutable and can be send anywhere without worrying about changes, also it resolves only once either to success or failure.
+3) How we initialise promise?
+   ```javascript
+   let p = new Promise(function(resolve) {});
+    console.log(p)
+   ```
+
+   ```javascript
+   Promise { <pending> }
+   ```
+
+
+### CODE:
+```javascript
+function myAsyncFn() {
+  let p = new Promise(function(resolve) {
+    resolve("hi there");
+  });
+  return p;
+}
+
+const value = myAsyncFn();
+value.then(function(data) {
+  console.log(value);
+  console.log(data);
+});
+```
+
+#### OUTPUT:
+```jsx
+Promise { 'hi there' }
+hi there
+```
 
  [YT AKSHAY](https://www.youtube.com/watch?v=yEKtJGha3yM) 
  [AKSHAY PROMISES](https://www.youtube.com/watch?v=ap-6PPAuK1Y&list=PLlasXeu85E9eWOpw9jxHOQyGMRiBZ60aX&index=3&t=779s)     
@@ -674,16 +708,87 @@ Will this be printed first?
 Hi There ! Hello from a.txt
 ```
 
-* 4 major things contribute to the async activity of JS:
-   - Call Stack
-   - Web Apis
-   - Callback Queue
-   - Event Loop
+* 4 major things contribute to the async activity of JS: [VISUALISE](http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D)  
+   - Call Stack - responsible for running each line of code
+   - Web Apis - provided by browser - have added functionality - not necessarily part of Javascript - In case of setTImeout - webapis help to execute the time frame - ie (number of miliseconds)
+   - Callback Queue - once the wait is completed , it is pushed to the callback queue and it waits.
+   - Event Loop - checks when the main thread is idle and  it is pushed on to the callback stack to execute. It's job is to check if there is something in the callback queue - if yes puts to the call stack.
 
+
+### REAL USE OF CALLBACKS :
+ For synch code - without callbacks also we can suffice , but with asyn functions we need them
+
+---
+
+<a name="aa"></a><h2>ASYNC AWAIT</h2>
+---
+
+<br>
+Async Await is just syntactical sugar - also uses Promises and callbacks behind the hood.
+
+### CODE:
+
+```jsx
+function myAsyncFunction() {
+  let p = new Promise(function(resolve) {
+    // do some async logic here
+    setTimeout(function() {
+       resolve("hi there!")
+    },3000)
+   
+  });
+  return p;
+}
+
+async function main() {
+  const p = myAsyncFunction();
+  console.log(p)
+  const value = await myAsyncFunction();
+  console.log(value);
+}
+
+main();
+console.log("main")
+```
+
+#### OUTPUT:
+
+```jsx
+Promise { <pending> }
+main
+hi there!
+```
+
+
+
+
+
+
+ [YT]() 
 
 ---
 
 
+<a name="cab"></a><h2>CALL, APPLY, BIND</h2>
+---
+
+<br>
+
+
+
+
+
+
+
+### Code :
+
+```jsx
+
+```
+
+ [YT]() 
+
+---
 ### YOUTUBE PLAYLIST:
 * [Technical Suneja](https://www.youtube.com/watch?v=sOZwwL_-cBA&list=PL_HlKez9XCSM0bs8P7LtCTGh4rghAD2im)
 * [JS CAFE](https://www.youtube.com/@js_cafe/playlists)
