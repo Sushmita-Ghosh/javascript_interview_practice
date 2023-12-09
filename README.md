@@ -609,7 +609,6 @@ Conventionally all tags are kept in body but keeping the script tag in head with
 
 ---
 
----
 <a name="el"></a><h2>HOW DO WE ACHIEVE ASYCNHRONOUS ACTIVITY IN JS? EVENT LOOP</h2>
 ---
 
