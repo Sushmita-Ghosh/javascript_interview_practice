@@ -645,6 +645,45 @@ console.log("hello world");
 
 ```
 
+```
+Output
+```
+
+``` jsx
+hello world
+4950
+```
+
+```
+readFile
+```
+
+```javascript
+const fs = require('fs');
+
+fs.readFile("a.txt", "utf-8", (err, data) => {
+  console.log(data)
+});
+
+
+console.log("Will this be printed first?");
+```
+
+```
+Output
+```
+
+``` jsx
+Will this be printed first?
+Hi There ! Hello from a.txt
+```
+
+* 4 major things contribute to the async activity of JS:
+   - Call Stack
+   - Web Apis
+   - Callback Queue
+   - Event Loop
+
 
 ---
 
