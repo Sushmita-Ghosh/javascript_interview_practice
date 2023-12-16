@@ -504,7 +504,7 @@ setTimeout(() => {
 }, 5000);
 ```
 
-### WHAT IS CALLBACK HELL?
+### WHAT IS CALLBACK HELL/PYRAMID OF DOOM?
 
 - In a real-world application we might run into situations where we have a dependency of tasks on one another - say for example APIs trying to create order, payment, order summary, etc all these different APIs are dependent on one another but if we write the code - it gets ugly and difficult to understand. - which is called callback hell.
 
@@ -757,13 +757,94 @@ hi there!
 
 ### Code :
 
--
+- Suppose we have a promise which creates an order ( which will have return an orderId) if it it gets resolved correctly or will be rejected if the cart does not meet the validations.
 
-```jsx
+```javascript
+// Consuming the promise - generally we worry about this step.
+const cart = ["shoes", "pants", "kurta"];
 
+const promise = createOrder(cart); //orderID
+
+promise.then(function (orderId) {
+  console.log(orderId);
+  // proceedToPayment(orderId);
+});
+
+// Creating the promise
+
+function createOrder(cart) {
+  const pr = new Promise(function (resolve, reject) {
+    //  we will check if our cart is validated
+    // if not we will reject the promise
+    if (!validateCart(cart)) {
+      const err = new Error("Cart is not valid");
+      reject(err);
+    }
+
+    // once the cart is validated we can create an order and resolve with orderID
+    const orderId = "12345";
+    if (orderId) {
+      resolve(orderId);
+    }
+  });
+
+  return pr;
+}
+
+function validateCart(cart) {
+  if (cart) {
+    return true; // here we can check if cart is empty
+  } else return false;
+}
 ```
 
-[YT]()
+- Till the time our promise is resolved - it will be in **pending** state
+- We can handle error using the **.catch** method , and we can pass a failure callback to it as well.
+
+```javascript
+promise
+  .then(function (orderId) {
+    console.log(orderId);
+  })
+  .catch(function (err) {
+    console.log(err);
+  });
+```
+
+### PROMISE CHAINING:
+
+- As the name suggests we can keep chaining our promises with the **.then** callback.
+- Each time we chain we can access the value of resolve of the previous promise passed onto the next.
+- One common mistake is - whatever we need to pass onto the chain we need to return it. - we can either return a value or the promise itself - which will be resolved.
+
+```js
+const cart = ["apple", "banana"];
+
+const promise = createOrder(cart); //orderID
+
+promise
+  .then(function (orderId) {
+    console.log(orderId);
+    return orderId;
+  })
+  .then(function (orderId) {
+    return proceedToPayment(orderId);
+  })
+  .then(function (paymentInfo) {
+    console.log(paymentInfo);
+  })
+  .catch(function (err) {
+    console.log(err.message);
+  });
+
+function proceedToPayment(orderId) {
+  return new Promise(function (resolve, reject) {
+    resolve("Payment done successfully");
+  });
+}
+```
+
+[YT](https://namastedev.com/learn/namaste-javascript/ep-03-creating-a-promise-chaining-error-handling)
 
 ---
 
