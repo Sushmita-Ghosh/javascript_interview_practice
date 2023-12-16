@@ -29,7 +29,7 @@ Practice questions for Javascript Interview:
 | 17  |[ASYNC VS DEFER](#ad)|✔
 | 18  |[HOW DO WE ACHIEVE ASYCNHRONOUS ACTIVITY IN JS? EVENT LOOP](#el)|✔
 | 19  |[ASYNC AWAIT](#aa)|✔
-
+| 20  | [PROMISE CHAINING AND ERROR HANDLING](#pceh)
 
 
 ## TOPICS:
@@ -759,10 +759,21 @@ main
 hi there!
 ```
 
+ [YT]() 
+
+---
+
+<a name="pceh"></a><h2>PROMISE CHAINING AND ERROR HANDLING</h2>
+---
+
+<br>
 
 
+### Code :
 
+```jsx
 
+```
 
  [YT]() 
 
@@ -775,11 +786,6 @@ hi there!
 <br>
 
 
-
-
-
-
-
 ### Code :
 
 ```jsx
@@ -789,6 +795,8 @@ hi there!
  [YT]() 
 
 ---
+
+
 ### YOUTUBE PLAYLIST:
 * [Technical Suneja](https://www.youtube.com/watch?v=sOZwwL_-cBA&list=PL_HlKez9XCSM0bs8P7LtCTGh4rghAD2im)
 * [JS CAFE](https://www.youtube.com/@js_cafe/playlists)
