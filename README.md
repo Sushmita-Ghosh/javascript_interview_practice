@@ -896,7 +896,7 @@ const moreThanTwo = nums.reduce((acc, curr, i, arr) => {
 
 [YT - @RoadSideCoder](https://www.youtube.com/watch?v=dGq0gi0wv64&list=PLKhlp2qtUcSaCVJEt4ogEFs6I41pNnMU5&index=2)
 
-- Also see
+- Also see [FOLDER](https://github.com/Sushmita-Ghosh/javascript_interview_practice/tree/master/map_filter_reduce)
 
 ---
 
