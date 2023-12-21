@@ -16,7 +16,7 @@ Practice questions for Javascript Interview:
 | 4         | [](#sm)                                                          |
 | 5         | [CLOSURES](#c)                                                   |
 | 6         | [CALL, APPLY, BIND](#cab)                                        |
-| 7         | [MAP, FILTER, REDUCE](#fccc)                                     |
+| 7         | [MAP, FILTER, REDUCE](#mfr)                                      |
 | 8         | [UNDEFINED, NOT DEFINED](#fccc)                                  |
 | 9         | [PROTOTYPES](#fccc)                                              |
 | 10        | [MAP, SET, WEAKMAP, WEAKSET](#fccc)                              |
@@ -845,6 +845,58 @@ function proceedToPayment(orderId) {
 ```
 
 [YT](https://namastedev.com/learn/namaste-javascript/ep-03-creating-a-promise-chaining-error-handling)
+
+---
+
+## <a name="mfr"></a><h2>MAP, FILTER, REDUCE</h2>
+
+<br>
+
+### MAP:
+
+- Map is used to iterate over the array and apply the callback function to each one and return a new array.
+
+### Code :
+
+```javascript
+const nums = [1, 2, 3, 4];
+
+const multiplyThree = nums.map((num, i, arr) => {
+  return num * 3;
+});
+```
+
+### FILTER:
+
+- Applies the function as a conditional to the array - based on true from the condition the element is pushed onto the array.
+
+### Code :
+
+```javascript
+const nums = [1, 2, 3, 4];
+
+const moreThanTwo = nums.filter((num, i, arr) => {
+  return num > 2;
+});
+```
+
+### REDUCE:
+
+The reduce method reduces the array of values to just one value. It will execute the callback on each element of the array.
+
+### Code :
+
+```javascript
+const nums = [1, 2, 3, 4];
+
+const moreThanTwo = nums.reduce((acc, curr, i, arr) => {
+  return acc + curr;
+}, 0);
+```
+
+[YT - @RoadSideCoder](https://www.youtube.com/watch?v=dGq0gi0wv64&list=PLKhlp2qtUcSaCVJEt4ogEFs6I41pNnMU5&index=2)
+
+- Also see
 
 ---
 
