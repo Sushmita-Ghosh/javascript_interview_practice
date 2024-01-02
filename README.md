@@ -13,7 +13,7 @@ Practice questions for Javascript Interview:
 | 1         | [DEBOUNCING](#d)                                                 |
 | 2         | [MEMOIZATION](#se)                                               |
 | 3         | [SPREAD VS REST](#fccc)                                          |
-| 4         | [](#sm)                                                          |
+| 4         | [WHAT IS ES6 AND ITS FEATURES](#es6)                                                          |
 | 5         | [CLOSURES](#c)                                                   |
 | 6         | [CALL, APPLY, BIND](#cab)                                        |
 | 7         | [MAP, FILTER, REDUCE](#mfr)                                      |
@@ -900,7 +900,24 @@ const moreThanTwo = nums.reduce((acc, curr, i, arr) => {
 
 ---
 
-## <a name="cab"></a><h2>CALL, APPLY, BIND</h2>
+## <a name="es6"></a><h2>WHAT IS ES6 AND ITS FEATURES</h2>
+
+<be>
+
+Es6 comes with significant changes to Javascript Language
+
+### Code :
+
+```jsx
+
+```
+
+[YT]()
+
+---
+
+
+## <a name=""></a><h2></h2>
 
 <br>
 
