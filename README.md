@@ -30,6 +30,7 @@ Practice questions for Javascript Interview:
 | 18        | [HOW DO WE ACHIEVE ASYCNHRONOUS ACTIVITY IN JS? EVENT LOOP](#el) |
 | 19        | [ASYNC AWAIT](#aa)                                               |
 | 20        | [PROMISE CHAINING AND ERROR HANDLING](#pceh)                     |
+| 21        | [DELETE OPERATOR](#delete)                                       |
 
 ## TOPICS:
 
@@ -925,10 +926,10 @@ const moreThanTwo = nums.reduce((acc, curr, i, arr) => {
 
 ---
 
-## <a name=""></a><h2></h2>
+## <a name="delete"></a><h2>DELETE OPERATOR</h2>
 
 <br>
-
+The delete operator removes a property from an object. If the property's value is an object and there are no more refereances to the object, the object held by that property is eventually released automatically.
 ### Code :
 
 ```jsx
