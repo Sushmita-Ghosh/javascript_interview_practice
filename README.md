@@ -6,14 +6,14 @@ Practice questions for Javascript Interview:
 
 [Apurv's List](https://ak-javascript-slides.netlify.app/#0)
 
-## TABLE OF CONTENTS:
+## TABLE OF CONTENTS (#TableOfContents):
 
 | Serial No | Topic Name                                                       |
 | --------- | ---------------------------------------------------------------- |
 | 1         | [DEBOUNCING](#d)                                                 |
 | 2         | [MEMOIZATION](#se)                                               |
 | 3         | [SPREAD VS REST](#fccc)                                          |
-| 4         | [WHAT IS ES6 AND ITS FEATURES](#es6)                                                          |
+| 4         | [WHAT IS ES6 AND ITS FEATURES](#es6)                             |
 | 5         | [CLOSURES](#c)                                                   |
 | 6         | [CALL, APPLY, BIND](#cab)                                        |
 | 7         | [MAP, FILTER, REDUCE](#mfr)                                      |
@@ -904,18 +904,26 @@ const moreThanTwo = nums.reduce((acc, curr, i, arr) => {
 
 <be>
 
-Es6 comes with significant changes to Javascript Language
+- Es6 or ECMAScript 2015 is the 6th and major edition of the ECMAScript language specification standard. I defined the standarad for the implementation of JavaScript and it has become much more popular than the previous edition ES%
 
-### Code :
+- Es6 comes with significant changes to Javascript Language. It brought several new features like let and const keywords, spread and rest operators, template literals, classes , modules and many other enhancements to male JavaScript programming easier and more fun
 
-```jsx
+### Core Features of ES6
 
-```
+- Let and const keywords
+- Arrow Functions
+- Multi Line Strings
+- Default Parameters
+- Template Literals
+- Destructing Assignment
+- Enhanced Object Literals
+- Promises
+- Classes
+- Modules
 
-[YT]()
+[YT](https://www.youtube.com/watch?v=7-p6lPxPr5U)
 
 ---
-
 
 ## <a name=""></a><h2></h2>
 
@@ -930,6 +938,8 @@ Es6 comes with significant changes to Javascript Language
 [YT]()
 
 ---
+
+-- Go to [Table Of Contents](TableOfContents)
 
 ### YOUTUBE PLAYLIST:
 
