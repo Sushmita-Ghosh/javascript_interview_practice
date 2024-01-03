@@ -415,6 +415,10 @@ Already Subcribed to Sushmita's Channel
 
 - For normal function this is taken - from the context to which it is referening to.
 - For arrow functions this refers to the outer normal function
+- In object method, this refers to object
+- alone, this refers to the global object
+- In a function, in strict mode, this is undefined
+- Array functions - map, filter, reduce - can access this.
 
 <b>For example :</b>
 
