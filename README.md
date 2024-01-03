@@ -939,7 +939,7 @@ const moreThanTwo = nums.reduce((acc, curr, i, arr) => {
 
 ---
 
--- Go to [Table Of Contents](TableOfContents)
+-- Go to <a name="TableOfContents"></a><p>TABLE OF CONTENTS</p>
 
 ### YOUTUBE PLAYLIST:
 
