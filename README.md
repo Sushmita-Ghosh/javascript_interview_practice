@@ -6,7 +6,7 @@ Practice questions for Javascript Interview:
 
 [Apurv's List](https://ak-javascript-slides.netlify.app/#0)
 
-## <a name="TableOfContents"></a>TABLE OF CONTENTS:
+<a name="TableOfContents"></a><h2>TABLE OF CONTENTS:</h2>
 
 | Serial No | Topic Name                                                       |
 | --------- | ---------------------------------------------------------------- |
