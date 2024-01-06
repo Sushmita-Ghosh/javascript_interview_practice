@@ -22,7 +22,7 @@ Practice questions for Javascript Interview:
 | 10        | [MAP, SET, WEAKMAP, WEAKSET](#fccc)                              |
 | 11        | [HOISTING](#fccc)                                                |
 | 12        | [EVENT BUBBLING, CAPTURING, PROPAGATION](#fccc)                  |
-| 13        | [CURRYING, INFINITE CURRYING](#fccc)                             |
+| 13        | [CURRYING, INFINITE CURRYING](#currying)                         |
 | 14        | [THROTTLING](#t)                                                 |
 | 15        | [THIS KEYWORD](#this)                                            |
 | 16        | [PROMISES](#p)                                                   |
@@ -155,6 +155,41 @@ const throttledCount = myThrottle(() => {
 [YT](https://www.youtube.com/watch?v=kCfTEoeQvQw&list=PLKhlp2qtUcSaCVJEt4ogEFs6I41pNnMU5&index=10)
 
 ---
+
+## <a name="currying"></a><h2>CURRYING, INFINITE CURRYING</h2>
+
+<br>
+- Currying is a concept in javascript wherein there is function that takes in one input at a time and returns a new function expecting the next input.
+
+- It is a convertion of funtions from callable as f(a,b) -> to f(a)(b)
+
+-Basically Currying doesn’t call a function. It just transforms a function. They are constructed by chaining closures by immediately returning their inner functions simultaneously.
+
+- Also see [Folder for Examples]()
+
+```js
+function f(a, b) {
+  console.log(a, b);
+}
+
+function f(a) {
+  return function (b) {
+    console.log(a, b);
+  };
+}
+
+f(4)(5);
+```
+
+### Why do we need currying?
+
+- To avoid passing the same variable again & again
+- to create higher order func
+- to make your function pure and less prone to error.
+- It is a checking method that checks if you have all the things before you proceed.
+- It divides one function into multiple functions so that one handles one set of responsibility.
+
+## [YT-@RoadSide](https://www.youtube.com/watch?v=k5TC9i5HonI)
 
 ## <a name="c"></a><h2>CLOSURES</h2>
 
