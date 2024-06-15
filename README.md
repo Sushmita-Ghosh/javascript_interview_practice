@@ -31,6 +31,7 @@ Practice questions for Javascript Interview:
 | 19        | [ASYNC AWAIT](#aa)                                               |
 | 20        | [PROMISE CHAINING AND ERROR HANDLING](#pceh)                     |
 | 21        | [DELETE OPERATOR](#delete)                                       |
+| 22        | [SHALLOW COPY VS DEEP COPY](#scvsdc)                                       |
 
 ## TOPICS:
 
@@ -978,10 +979,55 @@ The delete operator removes a property from an object. If the property's value i
 [YT]()
 
 ---
+## <a name="scvsdc"></a><h2>SHALLOW COPY VS DEEP COPY</h2>
+
+<br>
+* Essentially all the avialable common methods for clonong an object or cloning aan array all create a shallow copy,  they are work on refernces when it comes to nested arrays or nested objects. So if you have a nested obj / array , they will not work.  Shallow copy is changes in instance of an object modifies the original object ( so if a = b change in b will bring change in a).
+
+* That's no good! To resolve the issue we need to write our own function of deep clone
+### Code :
+
+```jsx
+const deepClone = (obj) => {
+  if (typeof obj !== "object" || obj === null) return obj;
+
+  // create an array / object to hold the values
+  const newObject = Array.isArray(obj) ? [] : {};
+
+  // loop through the object
+  for (let key in obj) {
+    const value = obj[key];
+
+    // recursively (deep) copy for nested objects, including arrays
+    newObject[key] = deepClone(value);
+  }
+
+  return newObject;
+};
+
+const oldScoreArray = [1, 2, 3, 4, 5];
+
+const newScoreArray = deepClone(oldScoreArray);
+
+newScoreArray[0] = 0;
+console.log(newScoreArray);
+console.log(oldScoreArray);
+
+```
+
+```bash
+OUTPUT:
+[ 0, 2, 3, 4, 5 ]
+[ 1, 2, 3, 4, 5 ]
+```
+
+[YT]()
+
+---
 
 - Go to [TABLE OF CONTENTS](#TableOfContents)
 
-### YOUTUBE PLAYLIST:
+### YOUTUBE PLAYLIST:                                  |
 
 - [Technical Suneja](https://www.youtube.com/watch?v=sOZwwL_-cBA&list=PL_HlKez9XCSM0bs8P7LtCTGh4rghAD2im)
 - [JS CAFE](https://www.youtube.com/@js_cafe/playlists)
