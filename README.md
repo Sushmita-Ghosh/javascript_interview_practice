@@ -31,7 +31,7 @@ Practice questions for Javascript Interview:
 | 19        | [ASYNC AWAIT](#aa)                                               |
 | 20        | [PROMISE CHAINING AND ERROR HANDLING](#pceh)                     |
 | 21        | [DELETE OPERATOR](#delete)                                       |
-| 22        | [SHALLOW COPY VS DEEP COPY](#scvsdc)                                       |
+| 22        | [SHALLOW COPY VS DEEP COPY](#scvsdc)                             |
 
 ## TOPICS:
 
@@ -190,11 +190,17 @@ f(4)(5);
 - It is a checking method that checks if you have all the things before you proceed.
 - It divides one function into multiple functions so that one handles one set of responsibility.
 
-## [YT-@RoadSide](https://www.youtube.com/watch?v=k5TC9i5HonI)
+### [YT-@RoadSide](https://www.youtube.com/watch?v=k5TC9i5HonI)
 
 ## <a name="c"></a><h2>CLOSURES</h2>
 
 <br>
+
+### Definition
+
+A closure is a function that can remember the variable from it's outer functions even after the outer function has executed.
+_or_
+A closure allows a function to access a variable from it's outer scope, even after the outer scope has finished execution.
 
 ### Lexical Scope
 
@@ -979,12 +985,14 @@ The delete operator removes a property from an object. If the property's value i
 [YT]()
 
 ---
+
 ## <a name="scvsdc"></a><h2>SHALLOW COPY VS DEEP COPY</h2>
 
 <br>
 * Essentially all the avialable common methods for clonong an object or cloning aan array all create a shallow copy,  they are work on refernces when it comes to nested arrays or nested objects. So if you have a nested obj / array , they will not work.  Shallow copy is changes in instance of an object modifies the original object ( so if a = b change in b will bring change in a).
 
-* That's no good! To resolve the issue we need to write our own function of deep clone
+- That's no good! To resolve the issue we need to write our own function of deep clone
+
 ### Code :
 
 ```jsx
@@ -1012,7 +1020,6 @@ const newScoreArray = deepClone(oldScoreArray);
 newScoreArray[0] = 0;
 console.log(newScoreArray);
 console.log(oldScoreArray);
-
 ```
 
 ```bash
@@ -1027,7 +1034,7 @@ OUTPUT:
 
 - Go to [TABLE OF CONTENTS](#TableOfContents)
 
-### YOUTUBE PLAYLIST:                                  |
+### YOUTUBE PLAYLIST: |
 
 - [Technical Suneja](https://www.youtube.com/watch?v=sOZwwL_-cBA&list=PL_HlKez9XCSM0bs8P7LtCTGh4rghAD2im)
 - [JS CAFE](https://www.youtube.com/@js_cafe/playlists)
