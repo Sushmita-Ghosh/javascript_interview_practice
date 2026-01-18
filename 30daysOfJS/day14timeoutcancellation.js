@@ -1,6 +1,8 @@
 /**
  * function in javascript the allows the execution of a function after a certain amount of time
  * setTimeout(function, time)
+ *
+ * // clearTimeout() function is used to cancel the execution of a function that has been scheduled using setTimeout().;; cancel a timeout before it triggers
  */
 
 /**
